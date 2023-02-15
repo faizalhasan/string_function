@@ -6,3 +6,4 @@ char* str_chr(char *str,char c);
 void reverse(char arr[]);
 void mem_cpy(char *str, char *str2,int n);
 void demo_mmove(char *dest,char* src, int n);
+char* stringToken(char* s, char d);
