@@ -140,4 +140,29 @@ void demo_mmove(char *dest,char* src, int n)
         }
     }
 }
+//tokenizer function
+char* stringToken(char* s, char d)
+{
+    static char *input = NULL;
+    if(input==NULL)  // no address 
+    {
+        input = s;
+    }
+    if(!*input)      // check if '\0' true
+    {
+        return NULL;  
+    }
 
+    char *token = input;
+    while(*input && *input!=d) 
+    {
+        input++;
+    }
+
+    if(*input)
+    {
+        *input = '\0';
+        input++; 
+    }
+    return token;
+}
