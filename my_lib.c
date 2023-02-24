@@ -109,15 +109,13 @@ void reverse(char arr[])
    }
 }
 //code to do copy over memory
-void mem_cpy(char *str, char *str2,int n)
-{
-    str2=(char*)realloc(str2,(n+1)*sizeof(char));
-    int i=0;
-    for(;i<n;i++)
-    {
-      str2[i]=str[i];
+void* my_memcpy(void* dest, const void* src, size_t n) {
+    char* dest_ptr = (char*)dest;
+    const char* src_ptr = (const char*)src;
+    for (size_t i = 0; i < n; i++) {
+        dest_ptr[i] = src_ptr[i];
     }
-    str2[i]='\0';
+    return dest;
 }
 //to move in between memory locations
 void demo_mmove(char *dest,char* src, int n)
