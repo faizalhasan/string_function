@@ -118,8 +118,10 @@ void* my_memcpy(void* dest, const void* src, size_t n) {
     return dest;
 }
 //to move in between memory locations
-void demo_mmove(char *dest,char* src, int n)
+void* demo_mmove(char *dest_ptr,char* src_ptr, int n)
 {
+    char* dest = (char*)dest_ptr;
+    const char* src = (const char*)src_ptr;
     if(dest<=src)
     {
         int i=0;
@@ -137,6 +139,7 @@ void demo_mmove(char *dest,char* src, int n)
             i--;
         }
     }
+    return dest;
 }
 //tokenizer function
 char* stringToken(char* s, char d)
